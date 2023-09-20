@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block title %}
+account page
+{% endblock %}
+
+
+{% block links %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('user.account.static', filename='css/account.css')}}">
+<link rel="stylesheet" href="{{url_for('user.account.static', filename='css/walletsList.css')}}">
+{% endblock %}
+
+
+{% block main %}
+<div class="wrapper">
+    <div class="account-info">
+    </div>
+
+    <nav id="account-nav">
+        <p class="block-header">Wallets list</p>
+
+        <button class="nav-item" onclick="toggleModalWindow()">
+            <p>new</p>
+            <img class="nav-item-icon" src="{{url_for('static',filename='icons/wallet/wallet_balance.svg')}}">
+        </button>
+    </nav>
+
+    {% include 'walletsList.html' %}
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('user.account.static',filename='js/createWallet.js')}}"></script>
+<script src="{{url_for('user.account.static',filename='js/wallet.js')}}"></script>
+{% endblock%}
+
+
+{% include 'createWalletModalWindow.html' %}

@@ -1,0 +1,14 @@
+.chat-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-gap: 20px;
+
+  max-width: 100%;
+
+  margin-bottom: 10px;
+}

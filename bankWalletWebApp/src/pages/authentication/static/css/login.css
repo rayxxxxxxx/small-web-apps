@@ -1,0 +1,49 @@
+#signin-form {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  gap: 1em;
+
+  width: 20%;
+
+  margin-top: 15ch;
+}
+
+#signin-form > input {
+  padding: 1em 1em;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+}
+
+#signin-button {
+  width: fit-content;
+  align-self: center;
+
+  padding: 0.5em 2em;
+  margin-top: 1em;
+
+  font-size: large;
+  color: black;
+
+  border: none;
+  border-radius: 100px;
+
+  background-color: gainsboro;
+}
+
+#signin-button:hover {
+  color: white;
+  background-color: dodgerblue;
+}
+
+#registration-suggest {
+  align-self: center;
+  margin-top: 3em;
+
+  color: dodgerblue;
+}
+
+input:focus {
+  outline: 1px solid dodgerblue;
+}
