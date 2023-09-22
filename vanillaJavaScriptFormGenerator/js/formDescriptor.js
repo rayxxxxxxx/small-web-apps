@@ -96,7 +96,7 @@ function generateFieldDescriptorHTML(descriptorUUID, fieldDescriptor, formDescri
     removeButton.setAttribute('type', 'button');
     removeButton.innerText = 'remove';
     removeButton.onclick = () => {
-        delete formDescriptor.removeFieldDescriptor(descriptorUUID);
+        formDescriptor.removeFieldDescriptor(descriptorUUID);
         document.getElementById(descriptorUUID).remove();
     }
 
