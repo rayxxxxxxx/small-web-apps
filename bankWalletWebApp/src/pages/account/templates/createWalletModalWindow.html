@@ -1,8 +1,0 @@
-{% extends 'modalWindowBase.html' %}
-
-{% block modal_window_content %}
-<form id="create-wallet-form" name="create_wallet_form" action="{{url_for('user.account.create_wallet')}}" method="post">
-    <input id="wallet-name" type="text" name="wallet_name" placeholder="wallet name" required>
-    <button type="button" onclick="submitForm();">create</button>
-</form>
-{% endblock %}

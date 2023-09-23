@@ -1,0 +1,13 @@
+<h1>Home</h1>
+
+<button id="loadBtn" type="button">laod content</button>
+
+<div id="mount-point"></div>
+
+<script src="/static/js/contentLoader.js"></script>
+
+<script type="text/javascript">
+    let url = 'http://localhost:9999/home/getContent';
+    let mountPoint = document.getElementById('mount-point');
+    document.getElementById('loadBtn').onclick = (event)=>loadContent(url, mountPoint);
+</script>

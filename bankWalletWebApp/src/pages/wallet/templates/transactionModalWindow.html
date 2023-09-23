@@ -1,9 +1,0 @@
-{% extends 'modalWindowBase.html' %}
-
-{% block modal_window_content %}
-<form id="transaction-form" name="transaction_form" action="{{url_for('user.account.wallet.transaction')}}" method="post">
-    <input id="user-wallet-id" type="text" name="user_wallet_id" placeholder="wallet id" required>
-    <input id="amount" type="number" name="amount" placeholder="amount" required>
-    <button type="button" onclick="submitForm();">send</button>
-</form>
-{% endblock %}
