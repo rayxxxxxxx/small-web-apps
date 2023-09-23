@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form generator</title>
+</head>
+
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/form.css">
+<link rel="stylesheet" href="../css/fieldDescriptor.css">
+
+<body>
+
+    <main>
+        <h1>Form creator</h1>
+
+        <label class="form-item" for="form-name">
+            <span>form name<span class="span-required">*</span></span>
+            <input type="text" name="formName" id="form-name" placeholder="name to display" required>
+        </label>
+
+        <form action="/" id="main-form" method="get">
+            <div class="form-block horizontal" id="input-types">
+                <h2>Type of input<span class="span-required">*</span></h2>
+
+                <label class="form-item radio" for="text-type">
+                    <span>text</span>
+                    <input type="radio" name="type" id="text-type" value="text" required checked>
+                </label>
+
+                <label class="form-item radio" for="textarea-type">
+                    <span>text area</span>
+                    <input type="radio" name="type" id="textarea-type" value="textarea" required>
+                </label>
+
+                <label class="form-item radio" for="number-type">
+                    <span>number</span>
+                    <input type="radio" name="type" id="number-type" value="number" required>
+                </label>
+
+                <label class="form-item radio" for="range-type">
+                    <span>range</span>
+                    <input type="radio" name="type" id="range-type" value="range" required>
+                </label>
+
+                <label class="form-item radio" for="date-type">
+                    <span>date</span>
+                    <input type="radio" name="type" id="date-type" value="date" required>
+                </label>
+
+                <label class="form-item radio" for="file-type">
+                    <span>file</span>
+                    <input type="radio" name="type" id="file-type" value="file" required>
+                </label>
+            </div>
+
+            <label class="form-item checkbox" for="required-input">
+                <span>required<span class="span-required">*</span></span>
+                <input type="checkbox" name="required" id="required-input" required checked>
+            </label>
+
+            <label class="form-item" for="label-input">
+                <span>label<span class="span-required">*</span></span>
+                <input type="text" name="label" id="label-input"
+                    placeholder="id and name attributes will correspond to label" required>
+            </label>
+
+            <label class="form-item" for="placeholder-input">
+                <span>placeholder</span>
+                <input type="text" name="placeholder" id="placeholder-input"
+                    placeholder="text to display in input when it's empty">
+            </label>
+
+            <label class="form-item" for="title-input">
+                <span>tooltip</span>
+                <input type="text" name="title" id="title-input" placeholder="text to display when hover on input">
+            </label>
+
+            <label class="form-item" for="maxlength-input">
+                <span>max length</span>
+                <input type="number" name="maxlength" id="maxlength-input"
+                    placeholder=" maximum length of input in characters">
+            </label>
+
+            <label class="form-item" for="pattern-input">
+                <span>pattern (regexp)</span>
+                <input type="text" name="pattern" id="pattern-input" placeholder="pattren, which input must match">
+            </label>
+
+            <label class="form-item" for="min-input">
+                <span>min value</span>
+                <input type="number" name="min" id="min-input" placeholder="minimum value of number">
+            </label>
+
+            <label class="form-item" for="max-input">
+                <span>max value</span>
+                <input type="number" name="max" id="max-input" placeholder="maximum value of number">
+            </label>
+
+            <label class="form-item" for="step-input">
+                <span>step value</span>
+                <input type="number" name="step" id="step-input" placeholder="number increment step">
+            </label>
+
+            <label class="form-item" for="size-input">
+                <span>size</span>
+                <input type="number" name="size" id="size-input" placeholder="maximum length of number in digits">
+            </label>
+
+            <label class="form-item" for="accept-input">
+                <span>accept</span>
+                <input type="text" name="accept" id="accept-input"
+                    placeholder="file extension, separated with comma (i.e.: .png, .jpg)">
+            </label>
+
+            <label class="form-item checkbox" for="multiple-input">
+                <span>multiple</span>
+                <input type="checkbox" name="multiple" id="multiple-input">
+            </label>
+
+            <div class="form-block horizontal buttons">
+                <button type="reset" id="clear-button">clear form</button>
+                <button type="submit">add field</button>
+                <button type="button" id="download-as-json-button" class="download">download as JSON</button>
+            </div>
+        </form>
+
+        <div id="fields-descriptors"></div>
+
+    </main>
+
+</body>
+
+<script src="../js/stringUtils.js"></script>
+<script src="../js/htmlUtils.js"></script>
+<script src="../js/downloadUtils.js"></script>
+<script src="../js/fetchUtils.js"></script>
+<script src="../js/formDescriptor.js"></script>
+<script src="../js/index.js"></script>
+
+</html>

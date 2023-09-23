@@ -1,0 +1,8 @@
+{% extends 'modalWindowBase.html' %}
+
+{% block modal_window_content %}
+<form id="create-account-form" name="create_account_form" action="{{url_for('user.create_account')}}" method="post">
+    <input id="account-name" type="text" name="account_name" placeholder="account name" required>
+    <button type="button" onclick="submitForm();">create</button>
+</form>
+{% endblock %}

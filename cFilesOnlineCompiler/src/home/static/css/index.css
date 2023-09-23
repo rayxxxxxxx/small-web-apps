@@ -1,0 +1,44 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+
+  width: 50%;
+}
+
+label {
+  margin: 1em 0em;
+}
+
+input {
+  padding: 1em;
+}
+
+.btn-submit {
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+
+  padding: 0.5em 2em;
+  margin: 1em 0em;
+
+  font-size: 2ch;
+}
+
+#usr-file {
+  align-self: center;
+
+  width: 300px;
+  height: 300px;
+
+  border: 2px dashed grey;
+  border-radius: 5px;
+
+  background-color: ghostwhite;
+}
+
+#usr-file:hover {
+  background-color: whitesmoke;
+}

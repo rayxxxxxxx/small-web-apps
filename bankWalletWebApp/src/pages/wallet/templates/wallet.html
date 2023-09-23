@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block title %}
+wallet page
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href="{{url_for('home.main')}}">home</a>
+<span>/</span>
+<a href="{{url_for('user.get')}}">user</a>
+<span>/</span>
+<a href="{{url_for('user.account.get')}}">account</a>
+{% endblock %}
+
+{% block main %}
+<h1>Wallet page</h1>
+
+<nav id="account-nav">
+    <label for="">
+        <h2>wallet name</h2>
+        <p id="wallet-name">{{wallet.name}}</p>
+    </label>
+
+    <label for="">
+        <h2>wallet fund</h2>
+        <h3 id="wallet-fund">{{wallet.fund}}</h3>
+    </label>
+
+    <label class="nav-item">
+        <button onclick="toggleModalWindow();">transfer money</button>
+    </label>
+</nav>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('user.account.wallet.static',filename='js/transaction.js')}}"></script>
+{% endblock%}
+
+{% include 'transactionModalWindow.html' %}

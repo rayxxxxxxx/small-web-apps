@@ -1,0 +1,76 @@
+.page-link > img {
+  max-width: 1.5em;
+  max-height: 1.5em;
+}
+
+/* =================================================================== */
+
+.nav-item {
+  display: flex;
+  align-items: center;
+
+  gap: 0.5em;
+}
+
+.page-link {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+
+  position: relative;
+
+  color: black;
+  text-decoration: none;
+}
+
+.page-link > p {
+  font-size: larger;
+}
+
+/* =================================================================== */
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+
+  margin-bottom: 2em;
+  padding: 1em 0;
+
+  background-color: white;
+
+  border-bottom: 1px solid black;
+}
+
+#pages {
+  display: flex;
+  gap: 2em;
+
+  padding-left: 5%;
+}
+
+#profile {
+  padding-right: 5%;
+}
+
+#profile-options {
+  position: absolute;
+
+  display: none;
+
+  width: max-content;
+}
+
+#profile-options > .page-link {
+  padding-top: 1em;
+}
+
+/* =================================================================== */
+
+#profile:hover > #profile-options {
+  display: block;
+}
+
+.page-link:hover {
+  color: dodgerblue;
+}
