@@ -11,6 +11,13 @@ function parseContent(text) {
     let regex = new RegExp("<script.*>");
     let matches = text.match(regex);
 
+    if (matches == null) {
+        return {
+            'html': text,
+            'script': null
+        }
+    }
+
     let scriptBeginIndex = matches.index + matches[0].length;
     let scriptEndIndex = text.indexOf("<\/script>", scriptBeginIndex);
 

@@ -3,9 +3,9 @@
 <button id="clickBtn" type="button">click</button>
 
 <script type="text/javascript">
-    document.getElementById('clickBtn').onclick = (event)=>{
+    document.getElementById('clickBtn').onclick = (event) => {
         let elem = document.createElement('p');
-        elem.innerText=`${new Date(Date.now())} click!`
+        elem.innerText = `${new Date(Date.now())} click!`
         document.body.appendChild(elem);
     }
 </script>
