@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  api:
+    build: backend/.
+    volumes:
+      - todolist-volume:/app/data
+    networks:
+      - todolist-network
+  
+  client:
+    depends_on:
+      - api
+    build: frontend/.
+    ports:
+      - "7001:7001"
+    networks:
+      - todolist-network
+
+networks:
+  todolist-network:
+    external: true
+
+volumes:
+  todolist-volume:
+    external: true

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="/static/css/todoItem.css">
+
+</style>
+
+<form id="todo-form" action="http://localhost:7001/home/add" method="post">
+    <input type="text" name="todoText">
+    <button type="submit">add</button>
+</form>
+
+{{#each todos}}
+<div id="{{this.uuid}}" class="todo-item">
+    <p>{{this.text}}</p>
+    <a href="http://localhost:7001/home/delete/{{this.uuid}}">
+        <button>delete</button>
+    </a>
+</div>
+{{/each}}
