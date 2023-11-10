@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:4.2
+    volumes:
+      - mongodb-volume:/data/db
+    networks:
+      - note-app-network
+
+  api:
+    depends_on:
+      - mongodb
+    build: backend/.
+    networks:
+      - note-app-network
+
+  ui:
+    depends_on:
+      - api
+    build: frontend/.
+    ports:
+      - 7001:7001
+    networks:
+      - note-app-network
+
+networks:
+  note-app-network:
+    external: true
+
+volumes:
+  mongodb-volume:
+    external: true

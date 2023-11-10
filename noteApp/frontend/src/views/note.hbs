@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="/static/css/note-form.css">
+
+<button onclick="window.history.back()">back</button>
+
+<form id="note-form" action="" method="get">
+    <label for="note-tags-input">
+        <p>tag list</p>
+        <input id="note-tags-input" type="text" name="tags" placeholder="write tags separated with one space"
+            value="{{tags}}">
+    </label>
+    <label for="note-title-input">
+        <p>title</p>
+        <input id="note-title-input" type="text" name="title" placeholder="title of the note" value="{{title}}">
+    </label>
+    <label for="note-text-input">
+        <p>text</p>
+        <textarea name="text" id="note-text-input">{{text}}</textarea>
+    </label>
+    <div class="buttons">
+        <button type="reset">clear</button>
+        <button type="submit" id="note-update-button" x-note-id="{{_id}}">update</button>
+    </div>
+</form>
+
+<script src="/static/js/utils/fetchUtils.js"></script>
+<script src="/static/js/utils/noteUtils.js"></script>
+<script src="/static/js/note.js"></script>

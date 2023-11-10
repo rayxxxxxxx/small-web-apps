@@ -1,0 +1,42 @@
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid lightgray;
+}
+
+#notes {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+    border: 1px solid lightgray;
+}
+
+.note>button {
+    align-self: flex-end;
+}
+
+.note-tags {
+    display: flex;
+    gap: 1em;
+    font-size: small;
+}
+
+.note-title{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.note-text{}
+
+.note-buttons{
+    display: flex;
+    justify-content: end;
+}
+

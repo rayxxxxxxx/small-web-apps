@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 0em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+}
+
+button {
+    width: fit-content;
+    padding: 0.25em 2em;
+}

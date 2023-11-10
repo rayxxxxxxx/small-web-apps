@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="/static/css/note-form.css">
+<link rel="stylesheet" href="/static/css/filter-form.css">
+<link rel="stylesheet" href="/static/css/note.css">
+
+<form id="note-form" action="" method="post">
+    <label for="note-tags-input">
+        <p>tag list</p>
+        <input id="note-tags-input" type="text" name="tags" placeholder="write tags separated with one space">
+    </label>
+    <label for="note-title-input">
+        <p>title</p>
+        <input id="note-title-input" type="text" name="title" placeholder="title of the note">
+    </label>
+    <label for="note-text-input">
+        <p>text</p>
+        <textarea name="text" id="note-text-input"></textarea>
+    </label>
+    <div class="buttons">
+        <button type="reset">clear</button>
+        <button type="submit" id="note-create-button">create</button>
+    </div>
+</form>
+
+<form id="filter-form" action="" method="get">
+    <input id="filter-tags-input" type="text" name="filterTags"
+        placeholder="write tags separated with one space (filer notes that have all specified tags)">
+    <button id="filter-button">filter</button>
+    <button id="reset-filter-button">reset</button>
+</form>
+
+<div id="notes">
+    {{#each notes}}
+    <div id="{{this._id}}" class="note">
+        <div class="note-tags">
+            {{#each this.tags}}
+            <a href="">
+                <p class="note-tag">{{this}}</p>
+            </a>
+            {{/each}}
+        </div>
+        <p class="note-title">{{this.title}}</p>
+        <p class="note-text">{{this.text}}</p>
+        <hr>
+        <div class="note-buttons">
+            <a href="/note/{{this._id}}"><button>modify</button></a>
+            <button class="note-delete-button" x-note-id="{{this._id}}">remove</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/static/js/utils/fetchUtils.js"></script>
+<script src="/static/js/utils/noteUtils.js"></script>
+<script src="/static/js/home.js"></script>
+<script src="/static/js/notesFilter.js"></script>
