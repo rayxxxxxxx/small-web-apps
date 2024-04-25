@@ -26,9 +26,11 @@ def login():
         payload = {'username': user.username}
         token = pyjwt.encode(payload, Config.SECRET)
 
-        response = make_response(render_template('login.html'))
+        page = render_template('login.html')
+
+        response = make_response(page)
         response.set_cookie('token', token)
-        response.location = url_for('auth.login')
+        response.set_cookie('username', user.username)
 
         return response
 
@@ -43,9 +45,11 @@ def signup_page():
 @auth.post('/signup')
 def signup():
     user = UserSchema(**request.form.to_dict())
+
     if not user_exists(user.username):
         create_user(user.username, user.password)
         return redirect(url_for('auth.login'))
+
     return redirect(url_for('auth.signup'))
 
 
