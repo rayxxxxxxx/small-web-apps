@@ -1,24 +1,31 @@
-from flask import Blueprint, render_template, request, redirect, url_for, make_response
+from flask import (
+    Blueprint,
+    make_response,
+    redirect,
+    url_for,
+    render_template,
+    request
+)
 
 import jwt as pyjwt
 
 from config import Config
 from .schemas import User as UserSchema
-from .models import user_exists, verify_password, create_user
-
-auth = Blueprint(
-    name='auth',
-    import_name=__name__,
-    url_prefix='/auth'
+from .models import (
+    user_exists,
+    verify_password,
+    create_user
 )
 
+router = Blueprint('auth', __name__, url_prefix='/auth')
 
-@auth.get('/login')
+
+@router.get('/login')
 def login_page():
     return render_template('login.html')
 
 
-@auth.post('/login')
+@router.post('/login')
 def login():
     user = UserSchema(**request.form.to_dict())
 
@@ -37,12 +44,12 @@ def login():
     return redirect(url_for('auth.login'))
 
 
-@auth.get('/signup')
+@router.get('/signup')
 def signup_page():
     return render_template('signup.html')
 
 
-@auth.post('/signup')
+@router.post('/signup')
 def signup():
     user = UserSchema(**request.form.to_dict())
 
@@ -53,7 +60,7 @@ def signup():
     return redirect(url_for('auth.signup'))
 
 
-@auth.get('/logout')
+@router.get('/logout')
 def logout():
     response = make_response(render_template('login.html'))
     response.delete_cookie('token')

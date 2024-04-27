@@ -7,13 +7,21 @@ from app.database import db
 
 
 class User(Model):
-    id = TextField(column_name='id')
+    id = TextField(column_name='id', primary_key=True)
     username = TextField(column_name='username')
     password = TextField(column_name='password')
 
     class Meta:
         table_name = 'User'
         database = db
+
+    @staticmethod
+    def as_dict(user):
+        return {
+            'id': user.id,
+            'username': user.username,
+            'password': user.password
+        }
 
 
 def create_user(username, password):
