@@ -1,0 +1,14 @@
+CREATE TABLE "Role" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("id")
+);
+
+CREATE TABLE "User" (
+	"id"	TEXT NOT NULL,
+	"role_id"	INTEGER NOT NULL DEFAULT 1,
+	"email"	TEXT NOT NULL UNIQUE,
+	"user_name"	TEXT NOT NULL UNIQUE,
+	"password"	TEXT NOT NULL,
+	PRIMARY KEY("id")
+);

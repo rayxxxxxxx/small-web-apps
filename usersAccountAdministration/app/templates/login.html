@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+
+{% include "includes/navbar.html" %}
+
+{% block title %}
+<h1>Log in</h1>
+{% endblock %}
+
+{% block main %}
+<form action="/auth/login" method="post">
+    <input type="text" name="email" placeholder="Email" value="example@mail.com">
+    <input type="text" name="password" placeholder="Password" value="123">
+    <button type="submit">log in</button>
+</form>
+
+<a href="/auth/signup">sign up</a>
+{% endblock %}

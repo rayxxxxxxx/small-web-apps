@@ -1,0 +1,7 @@
+**/__pycache__/
+
+.venv/
+
+*.ps1
+*.sh
+*.db
